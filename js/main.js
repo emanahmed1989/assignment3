@@ -10,6 +10,7 @@ var closeElement = document.getElementById("closeElement");
 var validcloseElement =document.getElementById("validcloseElement");
 var UpdatedsName = document.getElementById("UpdatedsiteName");
 var UpdatedsUrl = document.getElementById("UpdatedsiteUrl");
+var updateButton = document.getElementById("updateButton");
 var siteList = [];
 //load data saved in localStorage and put it in my sitelist
 if (localStorage.getItem("data") !== null) {
@@ -63,32 +64,39 @@ function deleteUrl(x) {
 //update site
 function updateUrl(x) {
    
-    
+    UpdatedsName.value =siteList[x].sName
+    UpdatedsUrl.value =siteList[x].sUrl
     modal.classList.replace("d-none", "d-flex")
-    var updateButton = document.getElementById("updateButton");
-    updateButton.addEventListener("click", function () {
-        if(UpdatedsName.value!="" &UpdatedsUrl.value!==""&validURL(UpdatedsUrl.value)&UpdatedsName.value.length>2){
-            var siteData = {
-                sName: UpdatedsName.value,
-                sUrl: UpdatedsUrl.value,
-            }
-            siteList[x] = siteData;
-            
-            localStorage.setItem("data", JSON.stringify(siteList));
-            
-            closeModa();
-            display();
-        }
-        else{
-            validmodal.classList.replace("d-none", "d-flex")
-        }
-       
-    })
+   
+    updateButton.setAttribute("onclick","update("+x+")");
+
     
 
 }
 
 //eventsListener
+ function update (x) {
+    if(UpdatedsName.value!="" &UpdatedsUrl.value!==""&validURL(UpdatedsUrl.value)&UpdatedsName.value.length>2){
+        var siteData = {
+            sName: UpdatedsName.value,
+            sUrl: UpdatedsUrl.value,
+        }
+        siteList[x] = siteData;
+        
+        localStorage.setItem("data", JSON.stringify(siteList));
+        UpdatedsName.value="";
+        UpdatedsUrl.value="";
+
+        closeModa();
+        display();
+       
+    }
+    else{
+        validmodal.classList.replace("d-none", "d-flex")
+    }
+   
+}
+
 closeElement.addEventListener("click", closeModa);
 validcloseElement.addEventListener("click",closeValidModal)
 modal.addEventListener("click",function(e){
@@ -131,6 +139,11 @@ button.addEventListener("click", function () {
     if(siteName.value!="" &siteUrl.value!==""&validURL(siteUrl.value)&siteName.value.length>2){
         siteList.push(siteData);
         localStorage.setItem("data", JSON.stringify(siteList));
+        siteName.value="";
+        siteUrl.value="";
+        siteName.classList.remove("is-valid");
+        siteUrl.classList.remove("is-valid");
+
         display();
     
     }

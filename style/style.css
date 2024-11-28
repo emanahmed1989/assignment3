@@ -25,6 +25,7 @@ h1{
 h2{
     font-family: "Righteous", sans-serif;
     font-weight: 400;
+    font-size: 23px;
     font-style: normal;
     background-image: linear-gradient(to right, #3ca55c, #fec260);
     background-clip: text;

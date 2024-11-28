@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,73 +11,89 @@
     <link rel="stylesheet" href="style/media.css">
     <script src="js/bootstrap.bundle.min.js"></script>
 </head>
+
 <body class="bg-white">
     <div id="modal" class=" d-none justify-content-center align-items-center">
         <div class="container">
             <form class="form-control position-relative">
                 <label class="mb-3"><i class="fa-solid fa-book-bookmark "></i>Site Name</label>
-        <input type="text" id="UpdatedsiteName" class="form-control mb-3>
-        <label class="mb-3"><i class=" fa fa-link"></i>Site URL</label>
-        <input type="text" id="UpdatedsiteUrl" class="form-control  mb-3">
-        <button type="button" class="btn btn-outline-dark " id="updateButton">submit</button>
-        <i id="closeElement" class="fa-regular  fa-xl fa-circle-xmark position-absolute top-0 end-0 mx-2 my-3"></i>
+                <input type="text" id="UpdatedsiteName" class="form-control mb-3>
+        <label class=" mb-3"><i class=" fa fa-link"></i>Site URL</label>
+                <input type="text" id="UpdatedsiteUrl" class="form-control  mb-3">
+                <button type="button" class="btn btn-outline-dark " id="updateButton">submit</button>
+                <i id="closeElement"
+                    class="fa-regular  fa-xl fa-circle-xmark position-absolute top-0 end-0 mx-2 my-3"></i>
             </form>
         </div>
-     
+
     </div>
     <div id="validmodal" class=" d-none justify-content-center align-items-center z-3">
-        
-            <div class="item w-50 bg-white mt-3 p-4 position-relative">
-                <i class="fa fa-circle text-danger fs-5 pe-2 pb-3 "></i>
-                <i class="fa fa-circle text-warning fs-5  pe-2 pb-3 "></i>
-                <i class="fa fa-circle text-success fs-5 pb-3"></i>
-                <p class="fw-bold">Site Name or Url is not valid, Please follow the rules below :</p>
-                <p ><i class="fa-regular fa-circle-right p-2 text-danger"></i>Site name must contain at least 3 characters</p>
-                <p><i class="fa-regular fa-circle-right p-2 text-danger"></i>Site URL must be a valid one</p>
-                <i id="validcloseElement" class="fa-regular  fa-xl fa-circle-xmark position-absolute top-0 end-0 mx-2 my-3"></i>
-            </div>
-     
-        
-     
+
+        <div class="item w-50 bg-white mt-3 p-4 position-relative">
+            <i class="fa fa-circle text-danger fs-5 pe-2 pb-3 "></i>
+            <i class="fa fa-circle text-warning fs-5  pe-2 pb-3 "></i>
+            <i class="fa fa-circle text-success fs-5 pb-3"></i>
+            <p class="fw-bold">Site Name or Url is not valid, Please follow the rules below :</p>
+            <p><i class="fa-regular fa-circle-right p-2 text-danger"></i>Site name must contain at least 3 characters
+            </p>
+            <p><i class="fa-regular fa-circle-right p-2 text-danger"></i>Site URL must be a valid one</p>
+            <i id="validcloseElement"
+                class="fa-regular  fa-xl fa-circle-xmark position-absolute top-0 end-0 mx-2 my-3"></i>
+        </div>
+
+
+
     </div>
 
     <div class="container  ">
-        <div class="d-flex flex-column justify-content-center align-items-center">
-            <h1 class="text-center my-5 ">Bookmarker</h1>
+        <div class="row">
+            <div class="d-flex flex-column justify-content-center align-items-center">
+                <h1 class="text-center my-5 ">Bookmarker</h1>
+            </div>
+            <hr class="dotted">
+            <div class="col-12 ">
+
+                <h2 class="text-center my-5"><i class="fa-solid fa-bookmark"></i> Bookmark your favorite sites <i
+                        class="fa-solid fa-bookmark"></i></h2>
+            </div>
         </div>
-        
-        <hr class="dotted">
-        <h2 class="text-center my-5"><i class="fa-solid fa-bookmark"></i> Bookmark your favorite sites <i class="fa-solid fa-bookmark"></i></h2>
-<div class="myform bg-body-tertiary rounded-2 shadow p-5 mb-5">
-    <label class="mb-3"><i class="fa-solid fa-book-bookmark "></i> Site Name</label>
-    <input type="text" id="siteName" class="form-control mb-3" placeholder="Enter Site Name">
-    <label class="mb-3"><i class=" fa fa-link"></i> Site URL</label>
-    <input type="text" id="siteUrl" class="form-control  mb-3"placeholder="Enter Site Url">
-    <button type="button" class="btn btn-outline-dark mb-3 px-3"  id="addButton" >submit</button>
-    <input type="text" id="search" placeholder="search................." class="form-control  mb-3">
-    <hr class="dotted">
- 
-    <table class="table text-center ">
-        <thead>
-            <tr>
-                <td>index</td>
-                <td>Website Name</td>
-                <td>Visit</td>
-                <td>update</td>
-                <td>Delete</td>
-            </tr>
-           
-        </thead>
-        <tbody id="myTable">
-           
-        </tbody>
 
-    </table>
 
-</div>
-     
-   
+
+        <div class="myform bg-body-tertiary rounded-2 shadow p-5 mb-5">
+            <label class="mb-3"><i class="fa-solid fa-book-bookmark "></i> Site Name</label>
+            <input type="text" id="siteName" class="form-control mb-3" placeholder="Enter Site Name">
+            <label class="mb-3"><i class=" fa fa-link"></i> Site URL</label>
+            <input type="text" id="siteUrl" class="form-control  mb-3" placeholder="Enter Site Url">
+            <button type="button" class="btn btn-outline-dark mb-3 px-3" id="addButton">submit</button>
+            <input type="text" id="search" placeholder="search................." class="form-control  mb-3">
+            <hr class="dotted">
+        </div>
+        <div>
+            <table class="table text-center ">
+                <thead>
+                    <tr>
+                        <td>index</td>
+                        <td>Website Name</td>
+                        <td>Visit</td>
+                        <td>update</td>
+                        <td>Delete</td>
+                    </tr>
+
+                </thead>
+                <tbody id="myTable">
+
+                </tbody>
+
+            </table>
+        </div>
+
+
+
+
+
     </div>
     <script src="js/main.js"></script>
 </body>
+
 </html>
