@@ -21,11 +21,11 @@ if (localStorage.getItem("data") !== null) {
 //close modal function 
 function closeModa(){
     modal.classList.replace("d-flex", "d-none");
-    console.log("close")
+ 
 }
 function closeValidModal(){
     validmodal.classList.replace("d-flex", "d-none");
-    console.log("close")
+   
 }
 //validurl function
 function validURL(str) {
@@ -130,8 +130,7 @@ search.addEventListener("input", function () {
 })
 
 button.addEventListener("click", function () {
-    console.log(siteName.value);
-    console.log(siteUrl.value);
+   
     var siteData = {
         sName: siteName.value,
         sUrl: siteUrl.value,
@@ -155,7 +154,7 @@ else{
 });
 
 UpdatedsName.addEventListener("input",function(){
-    console.log("valid");
+    
    if(UpdatedsName.value.length>2&UpdatedsName.value!="" ){
     UpdatedsName.classList.add("is-valid");
     UpdatedsName.classList.remove("is-invalid");
@@ -167,7 +166,7 @@ UpdatedsName.addEventListener("input",function(){
    }
 })
 UpdatedsUrl.addEventListener("input",function(){
-    console.log("valid");
+   
    if(validURL(UpdatedsUrl.value)&UpdatedsUrl.value!="" ){
     UpdatedsUrl.classList.add("is-valid");
     UpdatedsUrl.classList.remove("is-invalid");
@@ -179,7 +178,7 @@ UpdatedsUrl.addEventListener("input",function(){
    }
 })
 siteName.addEventListener("input",function(){
-    console.log("valid");
+  
    if(siteName.value.length>2&siteName.value!="" ){
     siteName.classList.add("is-valid");
     siteName.classList.remove("is-invalid");
@@ -191,7 +190,7 @@ siteName.addEventListener("input",function(){
    }
 })
 siteUrl.addEventListener("input",function(){
-    console.log("valid");
+   
    if(validURL(siteUrl.value)&siteUrl.value!="" ){
     siteUrl.classList.add("is-valid");
     siteUrl.classList.remove("is-invalid");
